@@ -10,8 +10,6 @@ const PokemonCard = ({ pokemon }) => {
     isLoading,
   } = usePokemonDetails({ name: pokemon.name });
 
-  console.log("Error=====>", isError);
-
   if (isLoading)
     return <div className="bg-gray-100 p-4 rounded">Loading...</div>;
 

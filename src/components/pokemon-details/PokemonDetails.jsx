@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import React from "react";
 import { usePokemonDetails } from "../pokemon-card/hooks/usePokemonDetails";
 import Image from "next/image";
@@ -17,8 +17,12 @@ const PokemonDetails = ({ name }) => {
   return (
     <div className="mx-auto flex flex-col justify-center items-center pt-10 px-4">
       <div className="flex justify-center items-center space-x-4">
-        <h1 className="md:text-3xl text-2xl font-bold capitalize">{details.name}</h1>
-        <span className="md:text-3xl text-2xl font-bold text-zinc-500">#{details.id}</span>
+        <h1 className="md:text-3xl text-2xl font-bold capitalize">
+          {details.name}
+        </h1>
+        <span className="md:text-3xl text-2xl font-bold text-zinc-500">
+          #{details.id}
+        </span>
       </div>
       <div className="flex flex-col lg:flex-row   mt-10 lg:space-x-10">
         <div className="bg-gray-100 rounded-md flex justify-center items-center p-4">
@@ -27,7 +31,6 @@ const PokemonDetails = ({ name }) => {
             alt={details.name}
             width={280}
             height={100}
-            
           />
         </div>
         <div className="">
@@ -77,6 +80,7 @@ const PokemonDetails = ({ name }) => {
         </div>
       </div>
 
+      {/* Shows stats according pokemon */}
       <div className="mt-10 w-full max-w-xl">
         <h2 className="text-xl font-bold mb-4">Stats</h2>
         <div className="space-y-4">
