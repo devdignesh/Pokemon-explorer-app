@@ -21,29 +21,30 @@ const PokemonList = () => {
   if (isError) return <p>Error fetching data</p>;
 
   return (
-    <div className="container mx-auto p-4">
-      <h1 className="text-3xl font-bold text-center mb-4">Pokémon Explorer</h1>
-      <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4">
-        {data.results.map((pokemon) => (
-          <PokemonCard key={pokemon.name} pokemon={pokemon} />
-        ))}
+    <>
+      <div className="pb-12 px-4 md:px-8 lg:px-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4  gap-5 my-10">
+          {data.results.map((pokemon) => (
+            <PokemonCard key={pokemon.name} pokemon={pokemon} />
+          ))}
+        </div>
+        <div className="flex justify-between items-center mt-6">
+          <button
+            onClick={handlePrevious}
+            disabled={offset === 0}
+            className="px-4 py-2 bg-blue-500 text-white rounded disabled:bg-gray-300 disabled:cursor-not-allowed"
+          >
+            Previous
+          </button>
+          <button
+            onClick={handleNext}
+            className="px-4 py-2 bg-blue-500 text-white rounded"
+          >
+            Next
+          </button>
+        </div>
       </div>
-      <div className="flex justify-between mt-4">
-        <button
-          onClick={handlePrevious}
-          disabled={offset === 0}
-          className="px-4 py-2 bg-blue-500 text-white rounded disabled:bg-gray-300"
-        >
-          Previous
-        </button>
-        <button
-          onClick={handleNext}
-          className="px-4 py-2 bg-blue-500 text-white rounded"
-        >
-          Next
-        </button>
-      </div>
-    </div>
+    </>
   );
 };
 
