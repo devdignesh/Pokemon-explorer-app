@@ -3,7 +3,7 @@ import axios from "axios";
 export const getPokemonDetails = async (name) => {
   try {
 
-    const endpoint =  `https://pokeapi.co/api/v2/pokemon/${name}`;
+    const endpoint =  `${process.env.NEXT_PUBLIC_API_BASE_URL}/${name}`;
     const { data } = await axios.get(endpoint);
     return data;
 

@@ -7,7 +7,7 @@ const page =  async({ params }) => {
 
   return (
     <div className="pb-10">
-       <PokemonDetails name={name}></PokemonDetails>
+       <PokemonDetails name={name}/>
     </div>
   );
 };
