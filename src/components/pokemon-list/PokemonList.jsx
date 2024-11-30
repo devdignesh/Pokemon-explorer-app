@@ -1,8 +1,9 @@
 "use client";
+
 import { useState, useEffect } from "react";
+import { IoSearchOutline } from "react-icons/io5";
 import { usePokemonData } from "./hooks/usePokemonData";
 import PokemonCard from "../pokemon-card/PokemonCard";
-import { IoSearchOutline } from "react-icons/io5";
 
 const ITEMS_PER_PAGE = 20; // Number of items per page
 
@@ -104,6 +105,7 @@ const PokemonList = () => {
       {/* Pagination Controls */}
       <div className="flex justify-between items-center mt-6">
         <button
+          type="button"
           onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
           disabled={currentPage === 1}
           className="px-4 py-2 bg-blue-500 text-white rounded disabled:bg-gray-300 disabled:cursor-not-allowed"
@@ -114,6 +116,7 @@ const PokemonList = () => {
           Page {currentPage} of {totalPages}
         </span>
         <button
+          type="button"
           onClick={() =>
             setCurrentPage((prev) => Math.min(prev + 1, totalPages))
           }

@@ -1,7 +1,8 @@
-"use client";
+'use client'
+
 import React from "react";
-import { usePokemonDetails } from "../pokemon-card/hooks/usePokemonDetails";
 import Image from "next/image";
+import { usePokemonDetails } from "../pokemon-card/hooks/usePokemonDetails";
 
 const PokemonDetails = ({ name }) => {
   const { data: details, isError, isLoading } = usePokemonDetails({ name });

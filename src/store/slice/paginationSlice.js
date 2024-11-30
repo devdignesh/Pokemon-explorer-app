@@ -10,6 +10,7 @@ const paginationSlice = createSlice({
   initialState,
   reducers: {
     setOffset: (state, action) => {
+      // eslint-disable-next-line no-param-reassign
       state.offset = action.payload;
     },
   },

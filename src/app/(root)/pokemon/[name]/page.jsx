@@ -1,5 +1,6 @@
-import PokemonDetails from "@/components/pokemon-details/PokemonDetails";
 import React from "react";
+import PokemonDetails from "@/components/pokemon-details/PokemonDetails";
+
 
 const page =  async({ params }) => {
 
